@@ -1197,4 +1197,12 @@ public class BinaryClient extends Connection {
   public void pfmerge(final byte[] destkey, final byte[]... sourcekeys) {
     sendCommand(PFMERGE, joinParameters(destkey, sourcekeys));
   }
+  
+  public void lmdbget(final byte[] key) {
+      sendCommand(LMDBGET, key);
+  } 
+  
+   public void lmdbset(final byte[] key, final byte[] value) {
+    sendCommand(LMDBSET, key, value);
+  }
 }

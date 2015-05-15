@@ -937,6 +937,16 @@ public class Client extends BinaryClient implements Commands {
   public void pfmerge(final String destkey, final String... sourcekeys) {
     pfmerge(SafeEncoder.encode(destkey), SafeEncoder.encodeMany(sourcekeys));
   }
+  
+  /* add lmdb commands */
+   public void lmdbset(final String key, final String value) {
+    lmdbset(SafeEncoder.encode(key), SafeEncoder.encode(value));
+  }
+
+  public void lmdbget(final String key) {
+    lmdbget(SafeEncoder.encode(key));
+  }
+ /*end add */
 
   public void clusterSetSlotStable(final int slot) {
     cluster(Protocol.CLUSTER_SETSLOT, String.valueOf(slot), Protocol.CLUSTER_SETSLOT_STABLE);

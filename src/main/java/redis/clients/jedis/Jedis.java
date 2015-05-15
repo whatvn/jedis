@@ -3191,6 +3191,22 @@ public class Jedis extends BinaryJedis implements JedisCommands, MultiKeyCommand
     return client.getStatusCodeReply();
   }
 
+  /* lmdb commands */
+   public String lmdbset(final String key, String value) {
+    checkIsInMulti();
+    client.lmdbset(key, value);
+    return client.getStatusCodeReply();
+  }
+
+  
+  
+  public String lmdbget(final String key) {
+    checkIsInMulti();
+    client.sendCommand(Protocol.Command.LMDBGET, key);
+    return client.getBulkReply();
+  }
+  /* end lmdb commands */
+  
   @Override
   public List<String> blpop(int timeout, String key) {
     return blpop(key, String.valueOf(timeout));
