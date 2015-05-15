@@ -947,6 +947,7 @@ public class Client extends BinaryClient implements Commands {
     lmdbget(SafeEncoder.encode(key));
   }
  /*end add */
+  
 
   public void clusterSetSlotStable(final int slot) {
     cluster(Protocol.CLUSTER_SETSLOT, String.valueOf(slot), Protocol.CLUSTER_SETSLOT_STABLE);

@@ -293,4 +293,9 @@ public interface Commands {
   public void zscan(final String key, final String cursor, final ScanParams params);
 
   public void waitReplicas(int replicas, long timeout);
+  
+  public void lmdbget(String key);
+  
+  public void lmdbset(String key, String value);
+  
 }

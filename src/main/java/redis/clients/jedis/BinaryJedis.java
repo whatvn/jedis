@@ -3154,6 +3154,7 @@ public class BinaryJedis implements BasicCommands, BinaryJedisCommands, MultiKey
     return client.getStatusCodeReply();
   }
   
+  
   public byte[] lmdbget(final byte[] key) {
     checkIsInMulti();
     client.lmdbget(key);
